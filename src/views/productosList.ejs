@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+
+<!-- COMIENZO DEL HEAD -->
+<%- include ('./partials/head') %>
+
+<!-- COMIENZO BODY -->
+<%- include ('./partials/header') %>
+<body>
+    <section class="page holder" style="padding-left: 14px">   
+        <p>Inicio/</p>
+        <p class="paget">Productos</p>
+    </section>
+<main class="content"> 
+    <div class="barra">
+        <h2>Categorías</h2>
+        <ul>
+            <li><a href="">Tortas Personalizadas</a></li>
+            <li><a href="">Tortas & Tartas</a></li>
+            <li><a href="">Desayunos y Meriendas</a></li>
+            <li><a href="">Cookies temáticas</a></li>
+            <li><a href="">Shots dulces</a></li>
+            <li><a href="">Muffins & Cupcakes</a></li>
+            <li><a href="">Alfajores</a></li>
+            <li><a href="">Box para regalar</a></li>
+            <li><a href="">Otras delicias</a></li>
+        </ul>
+    </div>
+<div class="cuerpo">
+        <section class="titular">
+        <h2>HACÉ TU PEDIDO Y RECIBILO SIN MOVERTE DE TU CASA</h2>
+        <h4>Aprovechá nuestros envios gratis y recibí tu producto en 48hs!</h4>
+         </section>
+
+    <section>
+        
+        <div class = "listado">
+            <% productos.map(function(producto){ %>
+            <a class="liarticle" href="/productos/detail/<%=producto.id%>"><article>
+                <div class="articulo">                
+                <img src="images/chessecake.jpg" alt="chessecake" class="product_img">
+                <h1><%= producto.discount %></h1>
+             </div>
+             
+                <div class="main-article">
+                    <p class="precio"> $<%= producto.price %></p>
+                    <h4 class="descripcion"> <%= producto.title %></a></h4>
+                    <section class="alcarrito">
+                        <a href="#">Agregar al Carrito</a>
+                        </section>
+                </div>
+            </article></a>
+            <% }) %>
+       </div>  
+</div>
+    </section>
+    <a href = "/productos/add"><button class = "boton">Agregar Producto</button></a>
+</main>
+
+   
+
+
+</body>
+<!-- COMIENZO FOOTER -->
+<%- include ('./partials/footer') %>
+</html>

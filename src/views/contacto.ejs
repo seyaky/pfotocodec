@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<!-- COMIENZO DEL HEAD -->
+<%- include ('./partials/head') %>
+
+<!-- COMIENZO BODY -->
+<%- include ('./partials/header') %>
+
+<body>
+ 
+ <main class="holder">
+    
+    <section class="page">   
+        <p>Inicio/</p>
+        <p class="paget">Contacto</p>
+    </section>
+    
+    <div class="columna left">
+        <h2 class="contacto"> CONTACTANOS</h2>
+         <section>
+        <p> Te esperamos de Lunes a Sabados de 10 a 13 y de 15 a 18hs</p>
+        <ul class="redes">
+            <li><img src="images/maps.jpg" alt="maps.logo" width="45">
+                <a href="#"> Santos Dumont 1440 - I. Casanova</a>
+        </ul>
+      </section>  
+      <iframe class="maps" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d52467.78819558762!2d-58.587661!3d-34.724426!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc5da8f84c6ff%3A0x9622551c8f1ec32a!2sSantos%20Dumont%201440%2C%20B1765AXD%20Isidro%20Casanova%2C%20Provincia%20de%20Buenos%20Aires%2C%20Argentina!5e0!3m2!1ses-419!2sus!4v1712168840063!5m2!1ses-419!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+       </iframe>    
+        <ul class="redes">
+            <li><img src="images/phone.jpg" alt="ph.logo" width="45">
+                <a href="#">Teléfono: (011) 4444-4444</a>
+            <li><img src="images/whatsapp.png" alt="wp.logo" width="45">
+                <a href="https://www.whatsapp.com/?lang=es_LA">Whatsapp: (011) 4444-4444</a>
+                <li><img src="images/mail.jpg" alt="mail.logo" width="45">
+                    <a href="#">info@dulcelourdes.com.ar</a>
+            </ul>
+    </div>
+
+     <div class="columna right"> 
+        
+    <form id="form" class="formulario">
+      <p>
+      <label for="Nombre">Nombre</label>
+    <input type="text" name="Nombre" id="Nombre"/>
+    </p>
+  
+  <p>
+    <label for="Email">Email</label>
+    <input type="text" name="Email" id="Email"/>
+  </p>
+  <p>
+    <label for="Telefono">Telefono</label>
+    <input type="text" name="Telefono" id="Telefono">
+</p>
+ <p>
+    <label for="Mensaje">Mensaje</label>
+   <input type="text" name="mensaje" id="Mensaje">
+  </p>
+    <p><input type="submit" id="button" value="Enviar"></p>
+    </form>
+      </div>    
+<script>
+  const btn = document.getElementById('button');
+
+document.getElementById('form')
+ .addEventListener('submit', function(event) {
+   event.preventDefault();
+
+   btn.value = 'Enviando';
+
+   const serviceID = 'default_service';
+   const templateID = 'template_e7nzpke';
+
+   emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+      btn.value = 'Enviar';
+      alert('Mensaje Enviado Correctamente');
+    }, (err) => {
+      btn.value = 'Enviar';
+      alert(JSON.stringify(err));
+    });
+    form.reset();
+});
+</script>
+</main>
+
+<!-- COMIENZO FOLLOW -->
+<%- include ('./partials/follow') %>
+
+</body>
+
+<!-- COMIENZO FOOTER -->
+<%- include ('./partials/footer') %>
+
+</html>

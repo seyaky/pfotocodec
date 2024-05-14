@@ -1,0 +1,32 @@
+{
+  "name": "dulce.lourdes",
+  "version": "1.0.0",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "method-override": "^3.0.0",
+    "moment": "^2.30.1",
+    "mysql2": "^3.9.7",
+    "nodemailer": "^6.9.13",
+    "nodemon": "^3.1.0",
+    "sequelize": "^6.37.3"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seyaky/dulce.lourdes.git"
+  },
+  "bugs": {
+    "url": "https://github.com/seyaky/dulce.lourdes/issues"
+  },
+  "homepage": "https://github.com/seyaky/dulce.lourdes#readme",
+  "description": ""
+}

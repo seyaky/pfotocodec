@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<!-- COMIENZO DEL HEAD -->
+<%- include ('./partials/head') %>
+
+<!-- COMIENZO BODY -->
+<%- include ('./partials/header') %>
+<body class="modify">
+  <main class="holder">
+  <h2><%= producto.title %></h2>
+  <br>
+  <p>Precio: $<%= producto.price %></p>
+  <p>Descuento: <%= producto.discount %></p>
+  <p>Detalle: <%= producto.detail %></p>
+  <br>
+
+  <div>
+    <a href="/productos/edit/<%=producto.id%>">Modificar</a>
+    <a href="/productos/delete/<%=producto.id%>">Borrar</a>
+    <a href="/productos">Listado de Productos</a>
+  </div>
+</main>
+
+</body>
+
+<!-- COMIENZO FOOTER -->
+<%- include ('./partials/footer') %>
+</html>

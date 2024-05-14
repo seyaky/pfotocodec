@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<!-- COMIENZO DEL HEAD -->
+<%- include ('./partials/head') %>
+
+<!-- COMIENZO BODY -->
+<%- include ('./partials/header') %>
+<body class="modify">
+    <main class="holder">
+  <h1>¿Estas seguro que queres borrar el siguiente Producto?: <%= producto.title %></h1>
+   <form action="/productos/delete/<%=producto.id%>?_method=PUT" method="POST">
+
+    <br>
+   <button type="submit">Borrar Producto</button>
+
+   <a href="/productos">Listado de Productos</a>
+
+   </form>
+</main>
+</body>
+<!-- COMIENZO FOOTER -->
+<%- include ('./partials/footer') %>
+</html>

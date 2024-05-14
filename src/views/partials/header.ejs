@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<header>
+        <div class="logos">
+        <section class="buscar">
+            <div class="btn">
+                <i class="fas fa-search icon"></i>
+            </div>
+            <input type="text" placeholder="Buscar" required>
+        </section>
+
+        <section class="empresa">
+            <a href="/" class="logo holder"><img src="images/logo.jpg" alt="logo" width="220"></a>
+        </section>
+        
+        <section class="carrito">
+            <div class="btn2">      
+            <i class="fa-solid fa-cart-shopping"></i>
+            </div> 
+          </section>
+          </div>
+ <nav class="bar">
+        <div class="container">
+             <ul class="nav-link holder">
+             <li><a class= "{{#if isHome}}activo{{/if}}" href="/">INICIO</a></li>
+             <li><a class= "{{#if isProductos}}activo{{/if}}" href="/productos">PRODUCTOS</a></li>
+             <li><a class= "{{#if isNosotros}}activo{{/if}}" href="/nosotros">NOSOTROS</a></li>
+             <li><a class= "{{#if isContacto}}activo{{/if}}" href="/contacto">CONTACTO</a></li>
+             </ul>
+           </div>
+      </nav>       
+</header>

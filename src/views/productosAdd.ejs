@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<!-- COMIENZO DEL HEAD -->
+<%- include ('./partials/head') %>
+
+<!-- COMIENZO BODY -->
+<%- include ('./partials/header') %>
+<body class="modify">
+  <main class="holder">
+
+  <h1>Carga de Formulario para agregar Producto</h1>
+  <br>
+
+  <form action="/productos/create" method="post">
+
+    <label for="title">Título </label>
+    <p><input type="text" id="title" name="title" required></p>
+    
+    <label for="price">Precio </label>
+    <p><input type="number" id="price" name="price" required></p>
+    
+    <label for="discount">Descuento </label>
+    <p><input type="text" id="discount" name="discount" required></p>
+
+    <label for="detail">Detalle </label>
+    <p><input type="detail" id="discount" name="detail" required></p>
+                
+    <label for="categoria_id">Género </label>
+    <p>
+        <select name="categoria_id" id="" required>
+            <% categoria.forEach(categoria => { %>
+            <option value="<%= categoria.id %>"><%= categoria.name %></option>
+            <% }); %>
+    </select>
+
+    <button type="submit">Agregar Producto</button>
+
+    <a href="/productos">Listado de Productos</a>
+    <br>
+    <br>
+    <br>
+  </form>
+</main>
+</body>
+<!-- COMIENZO FOOTER -->
+<%- include ('./partials/footer') %>
+</html>

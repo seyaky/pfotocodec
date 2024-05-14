@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<!-- COMIENZO DEL HEAD -->
+<%- include ('./partials/head') %>
+
+<!-- COMIENZO BODY -->
+<%- include ('./partials/header') %>
+
+<body class="modify">
+    <main class="holder">
+    
+    <h1 class="titulo">Producto Editado:  <%= producto.title %></h1>
+    <section class="formulario">
+        <form action="/productos/update/<%= producto.id %>?_method=PUT" method="POST">
+            <label for="title">Título </label>
+            <p><input type="text" name="title" id="" value="<%= producto.title %>" required></p>
+            
+            <label for="price">Precio </label>
+            <p><input type="number" name="price" id="" value="<%= producto.price %>" required></p>
+            
+            <label for="discount">Descuento </label>
+            <p><input type="text" name="discount" id="" value="<%= producto.discount %>" required></p>
+
+            <label for="detail"> Detalle </label>
+            <p><input type="detail" name="detail" id="" value="<%= producto.detail %>" required></p>
+                        
+            <label for="categoria_id">Género </label>
+
+            <p>
+                <select name="categoria" id="" required>
+                    <% categoria.forEach(categoria => { %>
+                    <option value="<%= categoria.id %>" <% if (producto.categoria.id == categoria.id) { %><%= 'selected' %><% }; %>><%= categoria.name %></option>
+                    <% }); %>
+                </select>
+            </p>
+            
+            <br>
+            <p> <button class="botonAgregar" type="submit">Modificar Producto</button>
+        
+            <a  class="botonVolver" href="/productos">Listado de Productos</a></p>
+        </form>
+    </section>
+    </main>
+</body>
+<!-- COMIENZO FOOTER -->
+<%- include ('./partials/footer') %>
+</html>
